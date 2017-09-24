@@ -1,18 +1,16 @@
 import java.util.Random;
 import java.util.Scanner;
 
-/**
- * Created by Anthony on 09/11/2017.
- */
 public class Lab2_part2 {
     public static void main(String[] args) {
         int[][] matrix;
-        int tempData;
+        int tempData = 0;
         Random rand = new Random();
-        Scanner in = new Scanner(System.in);
+        Scanner in = new Scanner(System.in,"utf-8");
 
-        System.out.println("Р’РІРµРґРёС‚Рµ СЂР°Р·РјРµСЂ РјР°С‚СЂРёС†С‹");
+        System.out.println("Введите размер матрицы");
         tempData = in.nextInt();
+
         matrix = new int[tempData][tempData];
 
         for (int i = 0; i < tempData; i++) {
@@ -43,7 +41,7 @@ public class Lab2_part2 {
                 }
             }
             if(isPaired){
-                System.out.printf("РЎС‚СЂРѕРєР° СЃ С‡РµС‚РЅС‹РјРё СЌР»РµРјРµРЅС‚Р°РјРё: %d\n", i+1);
+                System.out.printf("Строка с четными элементами: %d\n", i+1);
             }
             isPaired = true;
         }
@@ -62,10 +60,10 @@ public class Lab2_part2 {
                 }
             }
             if(downMonotone){
-                System.out.printf("РЎС‚СЂРѕРєР° РјРѕРЅРѕС‚РѕРЅРЅРѕ СѓРјРµРЅСЊС€Р°СЋС‰РµР№СЃСЏ РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕСЃС‚СЊСЋ: %d\n", i+1);
+                System.out.printf("Строка монотонно уменьшающейся последовательностью: %d\n", i+1);
             }
             if(upperMonotone){
-                System.out.printf("РЎС‚СЂРѕРєР° РјРѕРЅРѕС‚РѕРЅРЅРѕ СЂР°СЃС‚СѓС‰РµР№ РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕСЃС‚СЊСЋ: %d\n", i+1);
+                System.out.printf("Строка монотонно растущей последовательностью: %d\n", i+1);
             }
             downMonotone = true;
             upperMonotone = true;

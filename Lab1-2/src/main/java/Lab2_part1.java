@@ -6,20 +6,31 @@ import java.util.Scanner;
 public class Lab2_part1 {
     public static void main(String[] args) {
         int numbers[];
-        int tempData;
-        Scanner in = new Scanner(System.in);
+        int tempData = 11;
+        boolean inCatch = true;
+        Scanner in = new Scanner(System.in,"utf-8");
 
-        System.out.println("Р’РІРµРґРёС‚Рµ СЂР°Р·РјРµСЂ РјР°СЃСЃРёРІР° (РґРѕ 10)");
-        tempData = in.nextInt();
-        while(tempData > 10){
-            System.out.println("Р§РёСЃР»Рѕ Р±РѕР»СЊС€Рµ 10. Р’РІРµРґРёС‚Рµ СЂР°Р·РјРµСЂ РјР°СЃСЃРёРІР° (РґРѕ 10)");
-            tempData = in.nextInt();
+        while(inCatch) {
+            try {
+                System.out.println("Введите размер массива (до 10)");
+                tempData = in.nextInt();
+                while(tempData > 10){
+                    System.out.println("Число больше 10. Введите размер массива (до 10)");
+                    tempData = in.nextInt();
+                }
+                inCatch = false;
+            }
+            catch (Exception ex) {
+                inCatch = true;
+            }
         }
+
+
         numbers = new int[tempData];
-        System.out.println("Р—Р°РїРѕР»РЅРёС‚Рµ РјР°СЃСЃРёРІ\n");
+        System.out.println("Заполните массив\n");
 
         for(int i = 0; i < numbers.length; i++){
-            System.out.printf("Р’РІРµРґРµРЅРѕ: %d\n", i);
+            System.out.printf("Введено: %d\n", i);
             numbers[i] = in.nextInt();
         }
 
@@ -42,7 +53,7 @@ public class Lab2_part1 {
 
         int result = sum/pairs;
 
-        System.out.printf("CСЂРµРґРЅРµРµ Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРѕРµ РїР°СЂРЅС‹С… СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°: %d\n", result);
+        System.out.printf("Cреднее арифметическое парных элементов массива: %d\n", result);
     }
     static void minAndNumbers(int[] arrNumbers){
         int min = 99999;
@@ -63,7 +74,7 @@ public class Lab2_part1 {
         }
 
 
-        System.out.printf("РЎСѓРјРјР° РјРёРЅРёРјР°Р»СЊРЅРѕРіРѕ РїРѕР»РѕР¶РёС‚РµР»СЊРЅРѕРіРѕ СЌР»РµРјРµРЅС‚Р° РјР°СЃСЃРёРІР° Рё РµРіРѕ С‡РёСЃРµР»: %d\n", sum);
+        System.out.printf("Сумма минимального положительного элемента массива и его чисел: %d\n", sum);
     }
     static void minProduct(int[] arrNumbers)    {
         int min = arrNumbers[0];
@@ -81,7 +92,7 @@ public class Lab2_part1 {
 
         result = min*minPaired;
 
-        System.out.printf("РџСЂРѕРёР·РІРµРґРµРЅРёРµ РЅР°РёРјРµРЅСЊС€РµРіРѕ Рё РЅР°РёРјРµРЅСЊС€РµРіРѕ РїР°СЂРЅРѕРіРѕ СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°: %d\n", result);
+        System.out.printf("Произведение наименьшего и наименьшего парного элементов массива: %d\n", result);
     }
     static void multiple5(int[] arrNumbers){
         int result = 0;
@@ -92,7 +103,7 @@ public class Lab2_part1 {
             }
         }
 
-        System.out.printf("РљРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ, РєСЂР°С‚РЅС‹С… 5: %d\n", result);
+        System.out.printf("Количество элементов, кратных 5: %d\n", result);
     }
     static void pairedItemsOnOdd(int[] arrNumbers){
         int result = 0;
@@ -103,7 +114,7 @@ public class Lab2_part1 {
             }
         }
 
-        System.out.printf("РЎСѓРјРјР° РїР°СЂРЅС‹С… СЌР»РµРјРµРЅС‚РѕРІ РЅР° РЅРµС‡РµС‚РЅС‹С… РїРѕР·РёС†РёСЏС…: %d\n", result);
+        System.out.printf("Сумма парных элементов на нечетных позициях: %d\n", result);
     }
     static void maxSum(int[] arrNumbers){
         int max = arrNumbers[0];
@@ -122,7 +133,7 @@ public class Lab2_part1 {
         }
         result = max+second;
 
-        System.out.printf("РЎСѓРјРјР° РјР°РєСЃРёРјР°Р»СЊРЅРѕРіРѕ Рё РІС‚РѕСЂРѕРіРѕ РјР°РєСЃ. СЌР»РµРјРµРЅС‚Р°: %d\n", result);
+        System.out.printf("Сумма максимального и второго макс. элемента: %d\n", result);
     }
 
 }

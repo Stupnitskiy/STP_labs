@@ -1,9 +1,6 @@
 import java.util.Random;
 import java.util.Scanner;
 
-/**
- * Created by Anthony on 09/11/2017.
- */
 public class Lab2_part3 {
     public static void main(String[] args) {
         int[][] matrix = new int[10][10];
@@ -42,7 +39,7 @@ public class Lab2_part3 {
                         max = matrix[i][j];
                     }
                 }
-                System.out.printf("РЎС‚СЂРѕРєР° %d, СЃСѓРјРјР°: %d, РјР°РєСЃРёРјР°Р»СЊРЅС‹Р№ СЌР»РµРјРµРЅС‚: %d\n", i+1, sum, max);
+                System.out.printf("Строка %d, сумма: %d, максимальный элемент: %d\n", i+1, sum, max);
             }
         }
     }
